@@ -4,11 +4,11 @@ body {
     margin: 0;
     padding: 0;
     color: #333;
-    background-color: #f9fdf9; /* 极淡的绿色背景 */
+    background-color: #f9fdf9; 
 }
 
 header {
-    background-color: #2c5e2e; /* 深森林绿 */
+    background-color: #2c5e2e; 
     color: white;
     padding: 1rem 0;
 }
@@ -40,7 +40,6 @@ nav a {
     padding: 20px;
 }
 
-/* 占位符样式 - 方便你后面找图片 */
 .img-placeholder {
     background-color: #e0e0e0;
     border: 2px dashed #999;
