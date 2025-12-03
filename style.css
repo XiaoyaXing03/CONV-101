@@ -1,16 +1,21 @@
 body {
-    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    color: #333;
-    background-color: #f9fdf9; 
+    color: #444;
+    background-color: #f4f9f4;
 }
 
+
 header {
-    background-color: #2c5e2e; 
+    background: linear-gradient(135deg, #1b4d1e 0%, #2e7d32 100%); 
     color: white;
-    padding: 1rem 0;
+    padding: 0;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1); 
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 nav {
@@ -19,73 +24,177 @@ nav {
     align-items: center;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 15px 20px;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 1px;
 }
 
 nav ul {
     list-style: none;
     display: flex;
-    gap: 20px;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
 }
 
 nav a {
-    color: white;
+    color: rgba(255, 255, 255, 0.9);
     text-decoration: none;
-    font-weight: bold;
+    font-weight: 500;
+    font-size: 1.1rem;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #ffeb3b; 
 }
 
 .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 20px;
 }
 
 .img-placeholder {
-    background-color: #e0e0e0;
-    border: 2px dashed #999;
-    color: #555;
-    padding: 40px;
-    text-align: center;
+    background: transparent;
+    border: none;
+    padding: 0;
     margin-bottom: 20px;
-    border-radius: 8px;
+    border-radius: 12px;
+    overflow: hidden; 
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px; 
+    margin-top: 20px;
+}
+
+.card {
+    background: white;
+    border: none;
+    padding: 25px;
+    border-radius: 16px; 
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05); 
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.card:hover {
+    transform: translateY(-8px); /* 悬停上浮效果 */
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+.card .img-placeholder {
+    height: 220px; 
+    width: 100%;
+    background-color: #f0f0f0; 
+}
+
+.card .img-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    transition: transform 0.5s ease;
+}
+
+.card:hover .img-placeholder img {
+    transform: scale(1.05); 
+}
+ 首页 Hero 区域 */
+.hero {
+    background-color: white;
+    padding: 60px 20px;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+}
+
+.hero .img-placeholder, 
+h1 + .img-placeholder { 
+    height: auto; 
+    max-height: 500px; /* 最大高度限制，防止图太大 */
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    color: #1b4d1e;
+}
+
+.hero h3 {
+    font-weight: 300;
+    color: #555;
+    margin-bottom: 30px;
 }
 
 .btn {
     display: inline-block;
     background-color: #4CAF50;
     color: white;
-    padding: 10px 20px;
+    padding: 12px 30px;
     text-decoration: none;
-    border-radius: 5px;
-    margin-top: 10px;
+    border-radius: 50px; 
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    transition: background-color 0.3s, transform 0.2s;
+    margin-top: auto; 
+    text-align: center;
 }
 
 .btn:hover {
-    background-color: #45a049;
+    background-color: #388E3C;
+    transform: scale(1.05);
 }
 
-h1, h2, h3 {
-    color: #1b4d1e;
+h2 {
+    color: #2c5e2e;
+    border-bottom: 2px solid #e8f5e9;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
 }
 
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
+h3 {
+    color: #388E3C;
+    margin-top: 0;
 }
 
-.card {
-    background: white;
-    border: 1px solid #ddd;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+p, li {
+    color: #555;
+    font-size: 1rem;
+}
+
+ul {
+    padding-left: 20px;
+}
+
+li {
+    margin-bottom: 8px;
 }
 
 footer {
-    background-color: #333;
-    color: white;
+    background-color: #1a1a1a;
+    color: #888;
     text-align: center;
+    padding: 40px;
+    margin-top: 60px;
+    font-size: 0.9rem;
+}
+
+.card .img-placeholder img.icon-img {
+    object-fit: contain;
     padding: 20px;
-    margin-top: 40px;
+    background-color: #fff;
 }
